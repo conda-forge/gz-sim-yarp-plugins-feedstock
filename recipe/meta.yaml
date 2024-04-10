@@ -53,8 +53,6 @@ outputs:
     test:
       commands:
         {% set gyp_libs = [
-                "commons",
-                "handler",
                 "basestate-system",
                 "camera-system",
                 "clock-system",
