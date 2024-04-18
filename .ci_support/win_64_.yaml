@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 libprotobuf:
-- 4.25.1
+- 4.25.3
 libyarp:
 - 3.9.0
 target_platform:
