@@ -1,10 +1,13 @@
+# Note: we use this variable everywhere except in outputs names as jinja variables in output names are not supported
+# by migrators, see https://github.com/conda-forge/librobometry-feedstock/pull/20#issuecomment-2041618340
 {% set cxx_name = "libgz-sim-yarp-plugins" %}
 {% set plugin_name = "gz-sim-yarp-plugins" %}
 {% set name = "gz-sim-yarp-plugins-split" %}
 {% set version = "0.2.0" %}
 
 package:
-  name: {{ name }}
+  # {{ name }}
+  name: gz-sim-yarp-plugins-split
   version: {{ version }}
 
 source:
@@ -12,10 +15,11 @@ source:
     sha256: 98a6d17f8489723b869b24f4a550da514991028cf4bb29754bf672eee92b759d
 
 build:
-  number: 0
+  number: 1
 
 outputs:
-  - name: {{ cxx_name }}
+  # {{ cxx_name }}
+  - name: libgz-sim-yarp-plugins
     script: build_cxx.sh  # [unix]
     script: bld_cxx.bat  # [win]
     build:
@@ -67,7 +71,8 @@ outputs:
         - if not exist %LIBRARY_BIN%\\gz-sim-yarp-{{ gyp_lib }}.dll exit 1  # [win]
         {% endfor %}
 
-  - name: {{ plugin_name }}
+  # {{ plugin_name }}
+  - name: gz-sim-yarp-plugins
     requirements:
       run:
         - {{ pin_subpackage(cxx_name, exact=True) }}
