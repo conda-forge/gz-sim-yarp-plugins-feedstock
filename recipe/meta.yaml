@@ -3,7 +3,7 @@
 {% set cxx_name = "libgz-sim-yarp-plugins" %}
 {% set plugin_name = "gz-sim-yarp-plugins" %}
 {% set name = "gz-sim-yarp-plugins-split" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   # {{ name }}
@@ -12,10 +12,10 @@ package:
 
 source:
   - url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 98a6d17f8489723b869b24f4a550da514991028cf4bb29754bf672eee92b759d
+    sha256: 2c842206e03b297914b736b5fb91091a98dea22cd98764231411548531ad4591
 
 build:
-  number: 2
+  number: 0
 
 outputs:
   # {{ cxx_name }}
