@@ -11,6 +11,6 @@ cxx_compiler:
 libprotobuf:
 - 5.27.5
 libyarp:
-- 3.9.0
+- 3.10.1
 target_platform:
 - win-64

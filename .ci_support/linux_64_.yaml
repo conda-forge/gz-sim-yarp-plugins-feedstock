@@ -21,7 +21,7 @@ docker_image:
 libprotobuf:
 - 5.27.5
 libyarp:
-- 3.9.0
+- 3.10.1
 target_platform:
 - linux-64
 zip_keys:
