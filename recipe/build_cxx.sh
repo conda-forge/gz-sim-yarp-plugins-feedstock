@@ -17,7 +17,9 @@ cmake ${CMAKE_ARGS} -GNinja .. \
 
 cmake --build . --config Release
 
-if [[ ("${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "") && "${target_platform}" != osx-* ]]; then
+# Skip tests during cross-compilation as the QEMU emulator is not supported,
+# see https://github.com/gazebosim/gz-transport/issues/561
+if [[ ("${CONDA_BUILD_CROSS_COMPILATION:-}" != "1") && "${target_platform}" != osx-* ]]; then
   ctest -R '^ControlBoard|^ClockTest|^ConfigurationParsingTest' --output-on-failure --repeat until-pass:5 -C Release 
 fi
 
