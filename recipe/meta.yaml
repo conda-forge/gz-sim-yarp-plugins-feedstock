@@ -25,23 +25,21 @@ outputs:
     build:
       ignore_run_exports_from:
         - gtest
+      run_exports:
+        # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237
+        - {{ pin_subpackage(cxx_name, max_pin='x.x') }}
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libselinux') }}  # [linux]
-        - {{ cdt('libxdamage') }}  # [linux]
-        - {{ cdt('libxxf86vm') }}  # [linux]
-        - {{ cdt('libxext') }}     # [linux]
         - cmake
         - pkg-config
         - ninja
         - multisheller
       host:
         - xorg-libxfixes  # [linux]
+        - libgl-devel  # [linux]
         - libyarp
         - libgz-sim8
         - libgz-common5
