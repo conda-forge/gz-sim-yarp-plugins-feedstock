@@ -3,7 +3,7 @@
 {% set cxx_name = "libgz-sim-yarp-plugins" %}
 {% set plugin_name = "gz-sim-yarp-plugins" %}
 {% set name = "gz-sim-yarp-plugins-split" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   # {{ name }}
@@ -12,10 +12,10 @@ package:
 
 source:
   - url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: defcc9aaafca63efe605202edde3c8f1f867b89c8677f434f36a694007dc518d
+    sha256: 8debc33af469bd1844ef479da44d9980b865debc0c740fa2de730633e6fc69a4
 
 build:
-  number: 3
+  number: 0
 
 outputs:
   # {{ cxx_name }}
@@ -25,23 +25,21 @@ outputs:
     build:
       ignore_run_exports_from:
         - gtest
+      run_exports:
+        # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237
+        - {{ pin_subpackage(cxx_name, max_pin='x.x') }}
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libselinux') }}  # [linux]
-        - {{ cdt('libxdamage') }}  # [linux]
-        - {{ cdt('libxxf86vm') }}  # [linux]
-        - {{ cdt('libxext') }}     # [linux]
         - cmake
         - pkg-config
         - ninja
         - multisheller
       host:
         - xorg-libxfixes  # [linux]
+        - libgl-devel  # [linux]
         - libyarp
         - libgz-sim8
         - libgz-common5
