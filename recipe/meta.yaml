@@ -35,7 +35,7 @@ outputs:
       run_exports:
         # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237
         - {{ pin_subpackage(cxx_name, max_pin='x.x') }}
-        string: {{ GZ_DISTRO_VARIANT }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
+      string: {{ GZ_DISTRO_VARIANT }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
     requirements:
       build:
         - {{ compiler('c') }}
