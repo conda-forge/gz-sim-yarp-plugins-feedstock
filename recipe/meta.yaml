@@ -12,9 +12,6 @@
 {% set build_number = build_number + 200 %}
 {% endif %}
 
-
-
-
 package:
   # {{ name }}
   name: gz-sim-yarp-plugins-split
