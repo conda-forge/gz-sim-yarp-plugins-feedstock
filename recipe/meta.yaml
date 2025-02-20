@@ -4,6 +4,16 @@
 {% set plugin_name = "gz-sim-yarp-plugins" %}
 {% set name = "gz-sim-yarp-plugins-split" %}
 {% set version = "0.4.0" %}
+{% set build_number = 1 %}
+
+# As ionic (gz-sim9) is newer then harmonic (gz-sim8),
+# we give priority to the gz-sim9 installation
+{% if GZ_DISTRO_VARIANT == "ionic" %}
+{% set build_number = build_number + 200 %}
+{% endif %}
+
+
+
 
 package:
   # {{ name }}
@@ -28,6 +38,7 @@ outputs:
       run_exports:
         # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237
         - {{ pin_subpackage(cxx_name, max_pin='x.x') }}
+        string: {{ GZ_DISTRO_VARIANT }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -41,14 +52,22 @@ outputs:
         - xorg-libxfixes  # [linux]
         - libgl-devel  # [linux]
         - libyarp
-        - libgz-sim8
-        - libgz-common5
-        - libgz-transport13
-        - libgz-msgs10
-        - libsdformat14
+        - libabseil
         - libprotobuf
-        - libgz-math7
-        - libgz-plugin2
+        - libgz-math7  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-math8  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libgz-plugin2  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-plugin3  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libgz-msgs10  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-msgs11  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-transport13  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-transport14  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libgz-common5  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-common6  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libsdformat14  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libsdformat15  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libgz-sim8  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-sim9  # [GZ_DISTRO_VARIANT == "ionic"]
         - gtest
       run:
 
@@ -73,7 +92,7 @@ outputs:
   - name: gz-sim-yarp-plugins
     requirements:
       run:
-        - {{ pin_subpackage(cxx_name, exact=True) }}
+        - {{ pin_subpackage(cxx_name, max_pin='x.x.x') }}
     test:
       commands:
         {% for gyp_lib in gyp_libs %}
