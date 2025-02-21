@@ -1,2 +1,7 @@
 c_stdlib_version:              # [osx and x86_64]
   - 10.15                      # [osx and x86_64]
+
+# We want to build gz-sim-yarp-plugins for both Gazebo Harmonic (gz-sim8) and Gazebo Ionic (gz-sim9)
+GZ_DISTRO_VARIANT:
+  - "harmonic"
+  - "ionic"

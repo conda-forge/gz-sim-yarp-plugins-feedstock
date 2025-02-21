@@ -1,0 +1,20 @@
+GZ_DISTRO_VARIANT:
+- harmonic
+c_compiler:
+- vs2019
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2019
+libabseil:
+- '20240722'
+libprotobuf:
+- 5.28.3
+libyarp:
+- 3.10.1
+target_platform:
+- win-64
