@@ -56,7 +56,7 @@ outputs:
         - libgz-plugin2  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-plugin3  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-msgs10  # [GZ_DISTRO_VARIANT == "harmonic"]
-        - libgz-msgs11  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-msgs11  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-transport13  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-transport14  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-common5  # [GZ_DISTRO_VARIANT == "harmonic"]
