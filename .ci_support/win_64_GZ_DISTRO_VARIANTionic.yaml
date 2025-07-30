@@ -11,9 +11,9 @@ channel_targets:
 cxx_compiler:
 - vs2022
 libabseil:
-- '20250127'
+- '20250512'
 libprotobuf:
-- 5.29.3
+- 6.31.1
 libyarp:
 - 3.12.0
 target_platform:
