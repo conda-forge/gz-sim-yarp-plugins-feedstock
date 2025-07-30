@@ -51,6 +51,7 @@ outputs:
         - libyarp
         - libabseil
         - libprotobuf
+        - qt-main
         - libgz-math7  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-math8  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-plugin2  # [GZ_DISTRO_VARIANT == "harmonic"]
@@ -59,6 +60,8 @@ outputs:
         - libgz-msgs11  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-transport13  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-transport14  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libgz-rendering8  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-rendering9  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-common5  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-common6  # [GZ_DISTRO_VARIANT == "ionic"]
         - libsdformat14  # [GZ_DISTRO_VARIANT == "harmonic"]
