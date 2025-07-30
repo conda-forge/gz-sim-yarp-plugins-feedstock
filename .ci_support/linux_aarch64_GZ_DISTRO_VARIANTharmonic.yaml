@@ -26,6 +26,8 @@ libprotobuf:
 - 6.31.1
 libyarp:
 - 3.12.0
+qt_main:
+- '5.15'
 target_platform:
 - linux-aarch64
 zip_keys:
