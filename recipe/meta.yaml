@@ -4,7 +4,7 @@
 {% set plugin_name = "gz-sim-yarp-plugins" %}
 {% set name = "gz-sim-yarp-plugins-split" %}
 {% set version = "0.5.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 # As ionic (gz-sim9) is newer then harmonic (gz-sim8),
 # we give priority to the gz-sim9 installation
@@ -22,7 +22,7 @@ source:
     sha256: 73798074beb8abd67bb5a2ba16493032919d597dad1564078950902031c7a23b
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   # {{ cxx_name }}
