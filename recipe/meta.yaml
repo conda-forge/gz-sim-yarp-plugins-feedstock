@@ -52,6 +52,7 @@ outputs:
         - libabseil
         - libprotobuf
         - qt-main
+        - spdlog  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-math7  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-math8  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-plugin2  # [GZ_DISTRO_VARIANT == "harmonic"]
