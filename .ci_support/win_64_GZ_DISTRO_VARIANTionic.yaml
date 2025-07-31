@@ -18,5 +18,7 @@ libyarp:
 - 3.12.0
 qt_main:
 - '5.15'
+spdlog:
+- '1.14'
 target_platform:
 - win-64
