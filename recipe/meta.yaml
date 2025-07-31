@@ -4,7 +4,7 @@
 {% set plugin_name = "gz-sim-yarp-plugins" %}
 {% set name = "gz-sim-yarp-plugins-split" %}
 {% set version = "0.5.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 # As ionic (gz-sim9) is newer then harmonic (gz-sim8),
 # we give priority to the gz-sim9 installation
@@ -22,7 +22,7 @@ source:
     sha256: 73798074beb8abd67bb5a2ba16493032919d597dad1564078950902031c7a23b
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   # {{ cxx_name }}
@@ -51,6 +51,8 @@ outputs:
         - libyarp
         - libabseil
         - libprotobuf
+        - qt-main
+        - spdlog  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-math7  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-math8  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-plugin2  # [GZ_DISTRO_VARIANT == "harmonic"]
@@ -59,6 +61,8 @@ outputs:
         - libgz-msgs11  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-transport13  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-transport14  # [GZ_DISTRO_VARIANT == "ionic"]
+        - libgz-rendering8  # [GZ_DISTRO_VARIANT == "harmonic"]
+        - libgz-rendering9  # [GZ_DISTRO_VARIANT == "ionic"]
         - libgz-common5  # [GZ_DISTRO_VARIANT == "harmonic"]
         - libgz-common6  # [GZ_DISTRO_VARIANT == "ionic"]
         - libsdformat14  # [GZ_DISTRO_VARIANT == "harmonic"]
