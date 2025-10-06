@@ -19,6 +19,8 @@ recipe:
 source:
   url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v${{ version }}.tar.gz
   sha256: d23b8f24d59fbda783721704e86b1669c5f06f449900092abe32d6b6da6509fd
+  patches:
+    - 292.patch
 
 build:
   number: ${{ build_number }}
