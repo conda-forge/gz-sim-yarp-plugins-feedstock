@@ -1,0 +1,130 @@
+schema_version: 1
+
+context:
+  # Note: we use this variable everywhere except in outputs names as jinja variables in output names are not supported
+  # by migrators, see https://github.com/conda-forge/librobometry-feedstock/pull/20#issuecomment-2041618340
+  cxx_name: libgz-sim-yarp-plugins
+  plugin_name: gz-sim-yarp-plugins
+  name: gz-sim-yarp-plugins-split
+  version: 0.5.1
+  build_number_base: 1
+  # As ionic (gz-sim9) is newer than harmonic (gz-sim8),
+  # we give priority to the gz-sim9 installation
+  build_number: ${{ build_number_base if GZ_DISTRO_VARIANT == "harmonic" else build_number_base + 200 }}
+
+recipe:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: d23b8f24d59fbda783721704e86b1669c5f06f449900092abe32d6b6da6509fd
+
+build:
+  number: ${{ build_number }}
+
+outputs:
+  - package:
+      name: libgz-sim-yarp-plugins
+    build:
+      script:
+        - if: unix
+          then:
+            - build_cxx.sh
+        - if: win
+          then:
+            - bld_cxx.bat
+      string: ${{ GZ_DISTRO_VARIANT }}h${{ hash }}_${{ build_number }}
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('cxx') }}
+        - cmake
+        - pkg-config
+        - ninja
+        - multisheller
+      host:
+        - if: linux
+          then:
+            - xorg-libxfixes
+            - libgl-devel
+        - libyarp
+        - libabseil
+        - libprotobuf
+        - qt-main
+        - if: GZ_DISTRO_VARIANT == "harmonic"
+          then:
+            - libgz-math7
+            - libgz-plugin2
+            - libgz-msgs10
+            - libgz-transport13
+            - libgz-rendering8
+            - libgz-common5
+            - libsdformat14
+            - libgz-sim8
+        - if: GZ_DISTRO_VARIANT == "ionic"
+          then:
+            - spdlog
+            - libgz-math8
+            - libgz-plugin3
+            - libgz-msgs11
+            - libgz-transport14
+            - libgz-rendering9
+            - libgz-common6
+            - libsdformat15
+            - libgz-sim9
+        - gtest
+      ignore_run_exports:
+        by_name:
+          - gtest
+        from_package:
+          - gtest
+      run_exports:
+        # See https://github.com/robotology/gz-sim-yarp-plugins/pull/237
+        - ${{ pin_subpackage(cxx_name, upper_bound='x.x') }}
+    tests:
+      - package_contents:
+          lib:
+            - gz-sim-yarp-commons
+            - gz-sim-yarp-basestate-system
+            - gz-sim-yarp-camera-system
+            - gz-sim-yarp-clock-system
+            - gz-sim-yarp-controlboard-system
+            - gz-sim-yarp-forcetorque-system
+            - gz-sim-yarp-imu-system
+            - gz-sim-yarp-laser-system
+            - gz-sim-yarp-robotinterface-system
+      - script:
+          - cmake-package-check gz-sim-yarp-plugins --targets gz-sim-yarp-plugins::gz-sim-yarp-device-registry gz-sim-yarp-plugins::gz-sim-yarp-commons
+        requirements:
+          run:
+            - cmake-package-check
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+
+  - package:
+      name: gz-sim-yarp-plugins
+    requirements:
+      run:
+        - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
+    tests:
+      - script:
+          - cmake-package-check gz-sim-yarp-plugins --targets gz-sim-yarp-plugins::gz-sim-yarp-device-registry gz-sim-yarp-plugins::gz-sim-yarp-commons
+        requirements:
+          run:
+            - cmake-package-check
+            - ${{ compiler('c') }}
+            - ${{ compiler('cxx') }}
+
+about:
+  homepage: https://github.com/robotology/gz-sim-yarp-plugins
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: 'YARP plugins for Modern Gazebo (gz-sim).'
+
+extra:
+  feedstock-name: gz-sim-yarp-plugins
+  recipe-maintainers:
+    - xela-95
+    - traversaro
