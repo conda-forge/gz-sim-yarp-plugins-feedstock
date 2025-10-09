@@ -97,13 +97,14 @@ outputs:
             - gz-sim-yarp-imu-system
             - gz-sim-yarp-laser-system
             - gz-sim-yarp-robotinterface-system
-      - script:
-          - cmake-package-check gz-sim-yarp-plugins --targets gz-sim-yarp-plugins::gz-sim-yarp-device-registry gz-sim-yarp-plugins::gz-sim-yarp-commons
-        requirements:
-          run:
-            - cmake-package-check
-            - ${{ compiler('c') }}
-            - ${{ compiler('cxx') }}
+      # Test disabled for https://github.com/conda-forge/gz-sim-feedstock/issues/109
+      # - script:
+      #    - cmake-package-check gz-sim-yarp-plugins --targets gz-sim-yarp-plugins::gz-sim-yarp-device-registry gz-sim-yarp-plugins::gz-sim-yarp-commons
+      #  requirements:
+      #    run:
+      #      - cmake-package-check
+      #      - ${{ compiler('c') }}
+      #      - ${{ compiler('cxx') }}
 
   - package:
       name: gz-sim-yarp-plugins
@@ -112,12 +113,7 @@ outputs:
         - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
     tests:
       - script:
-          - cmake-package-check gz-sim-yarp-plugins --targets gz-sim-yarp-plugins::gz-sim-yarp-device-registry gz-sim-yarp-plugins::gz-sim-yarp-commons
-        requirements:
-          run:
-            - cmake-package-check
-            - ${{ compiler('c') }}
-            - ${{ compiler('cxx') }}
+          - echo "Metapackage, no test needed"
 
 about:
   homepage: https://github.com/robotology/gz-sim-yarp-plugins
