@@ -6,7 +6,7 @@ context:
   cxx_name: libgz-sim-yarp-plugins
   plugin_name: gz-sim-yarp-plugins
   name: gz-sim-yarp-plugins-split
-  version: 0.5.1
+  version: "0.5.2"
   build_number_base: 1
   # As ionic (gz-sim9) is newer than harmonic (gz-sim8),
   # we give priority to the gz-sim9 installation
@@ -18,7 +18,7 @@ recipe:
 
 source:
   url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: d23b8f24d59fbda783721704e86b1669c5f06f449900092abe32d6b6da6509fd
+  sha256: ac26b98a154cd58cbdbc4daf47b70ace25f998a91245200ffcd18731c711b27d
   patches:
     - 292.patch
 
