@@ -10,7 +10,7 @@ context:
   build_number_base: 1
   # As ionic (gz-sim9) is newer than harmonic (gz-sim8),
   # we give priority to the gz-sim9 installation
-  build_number: ${{ build_number_base if GZ_DISTRO_VARIANT == "harmonic" else build_number_base + 200 }}
+  build_number: 1
 
 recipe:
   name: ${{ name }}
