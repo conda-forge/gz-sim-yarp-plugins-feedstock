@@ -16,6 +16,8 @@ libprotobuf:
 - 6.31.1
 libyarp:
 - 3.12.1
+qt6_main:
+- '6.9'
 qt_main:
 - '5.15'
 spdlog:
