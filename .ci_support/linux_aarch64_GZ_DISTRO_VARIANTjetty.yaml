@@ -1,5 +1,5 @@
 GZ_DISTRO_VARIANT:
-- ionic
+- jetty
 c_compiler:
 - gcc
 c_compiler_version:
@@ -24,12 +24,14 @@ libprotobuf:
 - 6.31.1
 libyarp:
 - 3.12.1
+qt6_main:
+- '6.9'
 qt_main:
 - '5.15'
 spdlog:
 - '1.15'
 target_platform:
-- linux-ppc64le
+- linux-aarch64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

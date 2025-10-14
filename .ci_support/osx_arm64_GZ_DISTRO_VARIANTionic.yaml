@@ -28,6 +28,8 @@ libyarp:
 - 3.12.1
 macos_machine:
 - arm64-apple-darwin20.0.0
+qt6_main:
+- '6.9'
 qt_main:
 - '5.15'
 spdlog:

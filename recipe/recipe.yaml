@@ -6,11 +6,8 @@ context:
   cxx_name: libgz-sim-yarp-plugins
   plugin_name: gz-sim-yarp-plugins
   name: gz-sim-yarp-plugins-split
-  version: 0.5.1
-  build_number_base: 1
-  # As ionic (gz-sim9) is newer than harmonic (gz-sim8),
-  # we give priority to the gz-sim9 installation
-  build_number: ${{ build_number_base if GZ_DISTRO_VARIANT == "harmonic" else build_number_base + 200 }}
+  version: "0.5.2"
+  build_number: 0
 
 recipe:
   name: ${{ name }}
@@ -18,9 +15,7 @@ recipe:
 
 source:
   url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: d23b8f24d59fbda783721704e86b1669c5f06f449900092abe32d6b6da6509fd
-  patches:
-    - 292.patch
+  sha256: ac26b98a154cd58cbdbc4daf47b70ace25f998a91245200ffcd18731c711b27d
 
 build:
   number: ${{ build_number }}
@@ -54,28 +49,27 @@ outputs:
         - libyarp
         - libabseil
         - libprotobuf
-        - qt-main
-        - if: GZ_DISTRO_VARIANT == "harmonic"
+        - if: GZ_DISTRO_VARIANT == "harmonic" or GZ_DISTRO_VARIANT == "ionic"
           then:
-            - libgz-math7
-            - libgz-plugin2
-            - libgz-msgs10
-            - libgz-transport13
-            - libgz-rendering8
-            - libgz-common5
-            - libsdformat14
-            - libgz-sim8
-        - if: GZ_DISTRO_VARIANT == "ionic"
+            - qt-main
+          else:
+            - qt6-main
+        - if: GZ_DISTRO_VARIANT == "ionic" or GZ_DISTRO_VARIANT == "jetty"
           then:
             - spdlog
-            - libgz-math8
-            - libgz-plugin3
-            - libgz-msgs11
-            - libgz-transport14
-            - libgz-rendering9
-            - libgz-common6
-            - libsdformat15
-            - libgz-sim9
+        # To avoid the need to manually build a matrix of version to compile in
+        # conda_build_config.yaml, we depend on the meta-package gz-<distro>,
+        # that will then constrain the version of all the dependent packages to the
+        # correct version, that will then be exported as run dependencies via run_exports
+        - gz-${{ GZ_DISTRO_VARIANT }}
+        - libgz-math
+        - libgz-plugin
+        - libgz-msgs
+        - libgz-transport
+        - libgz-rendering
+        - libgz-common
+        - libsdformat
+        - libgz-sim
         - gtest
       ignore_run_exports:
         by_name:
@@ -108,9 +102,12 @@ outputs:
 
   - package:
       name: gz-sim-yarp-plugins
+    build:
+      # This ensure that we also have distro-specific variants for the gz-sim-yarp-plugins metapackage
+      string: ${{ GZ_DISTRO_VARIANT }}h${{ hash }}_${{ build_number }}
     requirements:
       run:
-        - ${{ pin_subpackage(cxx_name, upper_bound='x.x.x') }}
+        - ${{ pin_subpackage(cxx_name, exact=True) }}
     tests:
       - script:
           - echo "Metapackage, no test needed"

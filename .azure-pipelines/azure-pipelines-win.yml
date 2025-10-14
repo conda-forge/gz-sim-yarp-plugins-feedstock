@@ -14,6 +14,9 @@ jobs:
       win_64_GZ_DISTRO_VARIANTionic:
         CONFIG: win_64_GZ_DISTRO_VARIANTionic
         UPLOAD_PACKAGES: 'True'
+      win_64_GZ_DISTRO_VARIANTjetty:
+        CONFIG: win_64_GZ_DISTRO_VARIANTjetty
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\

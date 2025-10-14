@@ -37,6 +37,12 @@ description = "Build gz-sim-yarp-plugins-feedstock with variant linux_64_GZ_DIST
 [tasks."inspect-linux_64_GZ_DISTRO_VARIANTionic"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_GZ_DISTRO_VARIANTionic.yaml"
 description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant linux_64_GZ_DISTRO_VARIANTionic"
+[tasks."build-linux_64_GZ_DISTRO_VARIANTjetty"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "Build gz-sim-yarp-plugins-feedstock with variant linux_64_GZ_DISTRO_VARIANTjetty directly (without setup scripts)"
+[tasks."inspect-linux_64_GZ_DISTRO_VARIANTjetty"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant linux_64_GZ_DISTRO_VARIANTjetty"
 [tasks."build-linux_aarch64_GZ_DISTRO_VARIANTharmonic"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_GZ_DISTRO_VARIANTharmonic.yaml"
 description = "Build gz-sim-yarp-plugins-feedstock with variant linux_aarch64_GZ_DISTRO_VARIANTharmonic directly (without setup scripts)"
@@ -49,18 +55,12 @@ description = "Build gz-sim-yarp-plugins-feedstock with variant linux_aarch64_GZ
 [tasks."inspect-linux_aarch64_GZ_DISTRO_VARIANTionic"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_GZ_DISTRO_VARIANTionic.yaml"
 description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant linux_aarch64_GZ_DISTRO_VARIANTionic"
-[tasks."build-linux_ppc64le_GZ_DISTRO_VARIANTharmonic"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_GZ_DISTRO_VARIANTharmonic.yaml"
-description = "Build gz-sim-yarp-plugins-feedstock with variant linux_ppc64le_GZ_DISTRO_VARIANTharmonic directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_GZ_DISTRO_VARIANTharmonic"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_GZ_DISTRO_VARIANTharmonic.yaml"
-description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant linux_ppc64le_GZ_DISTRO_VARIANTharmonic"
-[tasks."build-linux_ppc64le_GZ_DISTRO_VARIANTionic"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_GZ_DISTRO_VARIANTionic.yaml"
-description = "Build gz-sim-yarp-plugins-feedstock with variant linux_ppc64le_GZ_DISTRO_VARIANTionic directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_GZ_DISTRO_VARIANTionic"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_GZ_DISTRO_VARIANTionic.yaml"
-description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant linux_ppc64le_GZ_DISTRO_VARIANTionic"
+[tasks."build-linux_aarch64_GZ_DISTRO_VARIANTjetty"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "Build gz-sim-yarp-plugins-feedstock with variant linux_aarch64_GZ_DISTRO_VARIANTjetty directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_GZ_DISTRO_VARIANTjetty"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant linux_aarch64_GZ_DISTRO_VARIANTjetty"
 [tasks."build-osx_64_GZ_DISTRO_VARIANTharmonic"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_GZ_DISTRO_VARIANTharmonic.yaml"
 description = "Build gz-sim-yarp-plugins-feedstock with variant osx_64_GZ_DISTRO_VARIANTharmonic directly (without setup scripts)"
@@ -73,6 +73,12 @@ description = "Build gz-sim-yarp-plugins-feedstock with variant osx_64_GZ_DISTRO
 [tasks."inspect-osx_64_GZ_DISTRO_VARIANTionic"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_GZ_DISTRO_VARIANTionic.yaml"
 description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant osx_64_GZ_DISTRO_VARIANTionic"
+[tasks."build-osx_64_GZ_DISTRO_VARIANTjetty"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "Build gz-sim-yarp-plugins-feedstock with variant osx_64_GZ_DISTRO_VARIANTjetty directly (without setup scripts)"
+[tasks."inspect-osx_64_GZ_DISTRO_VARIANTjetty"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant osx_64_GZ_DISTRO_VARIANTjetty"
 [tasks."build-osx_arm64_GZ_DISTRO_VARIANTharmonic"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_GZ_DISTRO_VARIANTharmonic.yaml"
 description = "Build gz-sim-yarp-plugins-feedstock with variant osx_arm64_GZ_DISTRO_VARIANTharmonic directly (without setup scripts)"
@@ -85,6 +91,12 @@ description = "Build gz-sim-yarp-plugins-feedstock with variant osx_arm64_GZ_DIS
 [tasks."inspect-osx_arm64_GZ_DISTRO_VARIANTionic"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_GZ_DISTRO_VARIANTionic.yaml"
 description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant osx_arm64_GZ_DISTRO_VARIANTionic"
+[tasks."build-osx_arm64_GZ_DISTRO_VARIANTjetty"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "Build gz-sim-yarp-plugins-feedstock with variant osx_arm64_GZ_DISTRO_VARIANTjetty directly (without setup scripts)"
+[tasks."inspect-osx_arm64_GZ_DISTRO_VARIANTjetty"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant osx_arm64_GZ_DISTRO_VARIANTjetty"
 [tasks."build-win_64_GZ_DISTRO_VARIANTharmonic"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_GZ_DISTRO_VARIANTharmonic.yaml"
 description = "Build gz-sim-yarp-plugins-feedstock with variant win_64_GZ_DISTRO_VARIANTharmonic directly (without setup scripts)"
@@ -97,6 +109,12 @@ description = "Build gz-sim-yarp-plugins-feedstock with variant win_64_GZ_DISTRO
 [tasks."inspect-win_64_GZ_DISTRO_VARIANTionic"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_GZ_DISTRO_VARIANTionic.yaml"
 description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant win_64_GZ_DISTRO_VARIANTionic"
+[tasks."build-win_64_GZ_DISTRO_VARIANTjetty"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "Build gz-sim-yarp-plugins-feedstock with variant win_64_GZ_DISTRO_VARIANTjetty directly (without setup scripts)"
+[tasks."inspect-win_64_GZ_DISTRO_VARIANTjetty"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_GZ_DISTRO_VARIANTjetty.yaml"
+description = "List contents of gz-sim-yarp-plugins-feedstock packages built for variant win_64_GZ_DISTRO_VARIANTjetty"
 
 [feature.smithy.dependencies]
 conda-smithy = "*"

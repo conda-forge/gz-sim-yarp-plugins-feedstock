@@ -1,5 +1,5 @@
 GZ_DISTRO_VARIANT:
-- harmonic
+- jetty
 c_compiler:
 - gcc
 c_compiler_version:
