@@ -55,7 +55,7 @@ outputs:
           else:
             - qt6-main
         - if: GZ_DISTRO_VARIANT == "ionic" or GZ_DISTRO_VARIANT == "jetty"
-          them:
+          then:
             - spdlog
         # To avoid the need to manually build a matrix of version to compile in
         # conda_build_config.yaml, we depend on the meta-package gz-<distro>,
