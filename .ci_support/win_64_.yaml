@@ -1,5 +1,6 @@
 GZ_DISTRO_VARIANT:
 - harmonic
+- ionic
 c_compiler:
 - vs2022
 c_stdlib:
@@ -19,6 +20,6 @@ libyarp:
 qt_main:
 - '5.15'
 spdlog:
-- '1.15'
+- '1.16'
 target_platform:
 - win-64

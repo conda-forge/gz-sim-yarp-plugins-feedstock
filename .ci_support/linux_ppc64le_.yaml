@@ -1,5 +1,6 @@
 GZ_DISTRO_VARIANT:
 - harmonic
+- ionic
 c_compiler:
 - gcc
 c_compiler_version:
@@ -27,9 +28,9 @@ libyarp:
 qt_main:
 - '5.15'
 spdlog:
-- '1.15'
+- '1.16'
 target_platform:
-- linux-64
+- linux-ppc64le
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
