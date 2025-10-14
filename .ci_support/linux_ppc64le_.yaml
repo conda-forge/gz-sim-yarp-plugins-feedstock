@@ -1,4 +1,5 @@
 GZ_DISTRO_VARIANT:
+- harmonic
 - ionic
 c_compiler:
 - gcc
