@@ -69,27 +69,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_GZ_DISTRO_VARIANTharmonic</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gz-sim-yarp-plugins-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_GZ_DISTRO_VARIANTharmonic" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_GZ_DISTRO_VARIANTionic</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gz-sim-yarp-plugins-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_GZ_DISTRO_VARIANTionic" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le_GZ_DISTRO_VARIANTjetty</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22080&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gz-sim-yarp-plugins-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_GZ_DISTRO_VARIANTjetty" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_GZ_DISTRO_VARIANTharmonic</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22080&branchName=main">
