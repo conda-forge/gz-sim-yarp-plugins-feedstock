@@ -33,7 +33,7 @@ qt6_main:
 qt_main:
 - '5.15'
 spdlog:
-- '1.15'
+- '1.16'
 target_platform:
 - osx-arm64
 zip_keys:
