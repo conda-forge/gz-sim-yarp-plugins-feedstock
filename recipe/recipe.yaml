@@ -121,5 +121,6 @@ about:
 extra:
   feedstock-name: gz-sim-yarp-plugins
   recipe-maintainers:
+    - Nicogene
     - xela-95
     - traversaro
