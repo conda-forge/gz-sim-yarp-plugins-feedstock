@@ -6,8 +6,8 @@ context:
   cxx_name: libgz-sim-yarp-plugins
   plugin_name: gz-sim-yarp-plugins
   name: gz-sim-yarp-plugins-split
-  version: "0.5.2"
-  build_number: 1
+  version: "0.5.3"
+  build_number: 0
 
 recipe:
   name: ${{ name }}
@@ -15,7 +15,7 @@ recipe:
 
 source:
   url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: ac26b98a154cd58cbdbc4daf47b70ace25f998a91245200ffcd18731c711b27d
+  sha256: 23e25d7a425691ab5dfae25deb235ebe84bd540a5cac4f626bf061d64c62ddf1
 
 build:
   number: ${{ build_number }}
