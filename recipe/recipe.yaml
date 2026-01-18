@@ -13,6 +13,7 @@ recipe:
   name: ${{ name }}
   version: ${{ version }}
 
+
 source:
   url: https://github.com/robotology/gz-sim-yarp-plugins/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 23e25d7a425691ab5dfae25deb235ebe84bd540a5cac4f626bf061d64c62ddf1
