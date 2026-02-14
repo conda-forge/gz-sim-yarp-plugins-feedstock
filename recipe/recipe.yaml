@@ -7,7 +7,7 @@ context:
   plugin_name: gz-sim-yarp-plugins
   name: gz-sim-yarp-plugins-split
   version: "0.5.3"
-  build_number: 3
+  build_number: 4
 
 recipe:
   name: ${{ name }}
