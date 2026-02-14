@@ -1,9 +1,9 @@
 GZ_DISTRO_VARIANT:
 - jetty
 MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+- '10.15'
 MACOSX_SDK_VERSION:
-- '11.0'
+- '10.15'
 c_compiler:
 - clang
 c_compiler_version:
@@ -11,7 +11,7 @@ c_compiler_version:
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
-- '11.0'
+- '10.15'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -21,9 +21,9 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 libabseil:
-- '20250512'
+- '20260107'
 libprotobuf:
-- 6.31.1
+- 6.33.5
 libyarp:
 - 3.12.2
 macos_machine:
