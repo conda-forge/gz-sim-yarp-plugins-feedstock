@@ -15,7 +15,7 @@ libabseil:
 libprotobuf:
 - 6.33.5
 libyarp:
-- 3.12.2
+- 3.12.3
 qt6_main:
 - '6.11'
 qt_main:
