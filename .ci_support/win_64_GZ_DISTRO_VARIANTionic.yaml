@@ -11,13 +11,13 @@ channel_targets:
 cxx_compiler:
 - vs2022
 libabseil:
-- '20260107'
+- '20260526'
 libprotobuf:
-- 6.33.5
+- 7.35.1
 libyarp:
 - 3.12.3
 qt6_main:
-- '6.11'
+- '6'
 qt_main:
 - '5.15'
 spdlog:
