@@ -1,7 +1,9 @@
 GZ_DISTRO_VARIANT:
 - jetty
 c_compiler:
-- vs2022
+- vs
+c_compiler_version:
+- '2022'
 c_stdlib:
 - vs
 channel_sources:
@@ -9,15 +11,17 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2022
+- vs
+cxx_compiler_version:
+- '2022'
 libabseil:
-- '20260526'
+- '20260817'
 libprotobuf:
 - 7.35.1
 libyarp:
 - 3.12.3
 qt6_main:
-- '6'
+- '6.11'
 qt_main:
 - '5.15'
 spdlog:
